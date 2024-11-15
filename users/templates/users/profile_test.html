@@ -1,0 +1,9 @@
+{% extends "posts/layout.html" %}
+
+{% block content %}
+user profile<br>
+{{ user.username }}<br>
+{{ user.email }}<br>
+<img src="{{ user.profile.profile_pic.url }}">
+{% endblock content %}
+

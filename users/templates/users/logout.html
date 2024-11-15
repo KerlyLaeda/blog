@@ -1,0 +1,11 @@
+{% extends "posts/layout.html" %}
+
+{% block content %}
+<h2>logged out</h2>
+
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            log in again <a href="{% url 'login' %}" class="ml-2">log in</a>
+        </small>
+    </div>
+{% endblock content %}
