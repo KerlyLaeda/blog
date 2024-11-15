@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -23,8 +22,3 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, "users/profile_test.html")
-=======
-from django.shortcuts import render
-
-# Create your views here.
->>>>>>> a3d12e0c42f094e74ef03cbfbc1150cb0385b89a
