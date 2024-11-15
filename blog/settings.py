@@ -39,9 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts.apps.PostsConfig',
+<<<<<<< HEAD
     'users.apps.UsersConfig',
     'crispy_forms',  # for login/register
     'crispy_bootstrap5',  # also look at end here
+=======
+    #'users'
+>>>>>>> a3d12e0c42f094e74ef03cbfbc1150cb0385b89a
 ]
 
 MIDDLEWARE = [
@@ -128,17 +132,23 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+<<<<<<< HEAD
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 
+=======
+>>>>>>> a3d12e0c42f094e74ef03cbfbc1150cb0385b89a
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 LOGIN_REDIRECT_URL = "posts-index"
 LOGIN_URL = "login"
+=======
+>>>>>>> a3d12e0c42f094e74ef03cbfbc1150cb0385b89a
