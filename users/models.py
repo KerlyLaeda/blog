@@ -13,7 +13,7 @@ class Profile(models.Model):
 
     # resize large profile pics to 300x300
     # maybe use 3p packs?
-    def save(self):
+    def save(self): # args kwargs
         super().save()
 
         img = Image.open(self.profile_pic.path)

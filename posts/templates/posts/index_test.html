@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for post in posts %}
-        <h1>{{ post.title }}</h1>
+        <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
         <p>{{ post.author }}</p>
         <img class="rounded-circle" src="{{ post.author.profile.profile_pic.url }}" height="50" width="50">
         <p>{{ post.date_posted|date:"M j, Y" }}</p> <!-- E : listopadA, locale specific -->
