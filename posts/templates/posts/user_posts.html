@@ -1,18 +1,18 @@
 {% extends "posts/layout.html" %}
 
 {% block content %}
-    {% for post in posts %}
-        <a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
-
+ <a href="{% url 'posts-index' %}">back to homepage</a>
+<h1>posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+{% for post in posts %}
+<a href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
 <a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-<!-- or redirect to profile, and show posts there ? now goes to user_posts.html-->
-        <img class="rounded-circle" src="{{ post.author.profile.profile_pic.url }}" height="50" width="50">
-        <p>{{ post.date_posted|date:"M j, Y" }}</p> <!-- E : listopadA, locale specific -->
-        <p>{{ post.content}}</p>
-    {% endfor%}
+<img class="rounded-circle" src="{{ post.author.profile.profile_pic.url }}" height="50" width="50">
+<p>{{ post.date_posted|date:"M j, Y" }}</p> <!-- E : listopadA, locale specific -->
+<p>{{ post.content}}</p>
+{% endfor%}
 
-    <!-- Pagination -->
-    <div class="pagination">
+<!-- Pagination -->
+<div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
                 <a href="?page=1" class="btn btn-outline-info">&laquo; first</a>
@@ -33,5 +33,5 @@
                 <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info">last &raquo;</a>
             {% endif %}
         </span>
-    </div>
+</div>
 {% endblock content %}
