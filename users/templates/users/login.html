@@ -1,12 +1,11 @@
 {% extends "posts/layout.html" %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 <form method="post">
     {% csrf_token %}
     <fieldset class="form-group">
         <legend class="border-bottom">login</legend>
-        {{ form|crispy }}
+        {{ form }}
     </fieldset>
     <button type="submit" class="btn btn-outline-info">sign in</button>
 </form>
@@ -15,4 +14,5 @@
         need an acc <a href="{% url 'register' %}" class="ml-2">sign up</a>
     </small>
 </div>
+<a href="{% url 'password_reset' %}">4got pw?</a>
 {% endblock content %}
