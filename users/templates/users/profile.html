@@ -1,5 +1,23 @@
 {% extends "posts/layout.html" %}
 
 {% block content %}
+    <div>
+        <img src="{{ user.profile.profile_pic.url }}">
+        <div>
+          <h2>{{ user.username }}</h2>
+          <p>{{ user.email }}</p>
+        </div>
 
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Profile Info</legend>
+                {{ u_form }}
+                {{ p_form }}
+            </fieldset>
+            <div>
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
 {% endblock content %}
